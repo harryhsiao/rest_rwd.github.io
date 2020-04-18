@@ -1,0 +1,2099 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+*{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+}
+
+.clearfix{
+    clear: both;
+}
+
+/*////////////////////////////////////////////////
+////                                         /////
+////           pure_button_star              /////
+////                                         /////
+///////////////////////////////////////////////*/
+
+/*!
+Pure v1.0.1
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/pure-css/pure/blob/master/LICENSE.md
+*/
+.btn {
+    /* Structure */
+    display: inline-block;
+    zoom: 1;
+    line-height: normal;
+    white-space: nowrap;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+/* Firefox: Get rid of the inner focus border */
+.btn::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+/* Inherit .pure-g styles */
+.btn-group {
+    letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
+    *letter-spacing: normal; /* reset IE < 8 */
+    *word-spacing: -0.43em; /* IE < 8: collapse white-space between units */
+    text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
+}
+
+.opera-only :-o-prefocus,
+.btn-group {
+    word-spacing: -0.43em;
+}
+
+.btn-group .btn {
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+}
+
+/*csslint outline-none:false*/
+
+.btn {
+    font-family: inherit;
+    font-size: 100%;
+    padding: 0.5em 1em;
+    color: #444; /* rgba not supported (IE 8) */
+    color: rgba(0, 0, 0, 0.80); /* rgba supported */
+    border: 1px solid #999;  /*IE 6/7/8*/
+    border: none rgba(0, 0, 0, 0);  /*IE9 + everything else*/
+    background-color: #E6E6E6;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.btn-hover,
+.btn:hover,
+.btn:focus {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(40%, rgba(0,0,0, 0.05)), to(rgba(0,0,0, 0.10)));
+    background-image: -webkit-linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+    background-image: linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+}
+.btn:focus {
+    outline: 0;
+}
+.btn-active,
+.btn:active {
+    -webkit-box-shadow: 0 0 0 1px rgba(0,0,0, 0.15) inset, 0 0 6px rgba(0,0,0, 0.20) inset;
+            box-shadow: 0 0 0 1px rgba(0,0,0, 0.15) inset, 0 0 6px rgba(0,0,0, 0.20) inset;
+    border-color: #000;
+}
+
+.btn[disabled],
+.btn-disabled,
+.btn-disabled:hover,
+.btn-disabled:focus,
+.btn-disabled:active {
+    border: none;
+    background-image: none;
+    /* csslint ignore:start */
+    filter: alpha(opacity=40);
+    /* csslint ignore:end */
+    opacity: 0.40;
+    cursor: not-allowed;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    pointer-events: none;
+}
+
+.btn-hidden {
+    display: none;
+}
+
+.btn-primary,
+.btn-selected,
+a.btn-primary,
+a.btn-selected {
+    background-color: rgb(0, 120, 231);
+    color: #fff;
+}
+
+/* Button Groups */
+.btn-group .btn {
+    margin: 0;
+    border-radius: 0;
+    border-right: 1px solid #111;  /* fallback color for rgba() for IE7/8 */
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+
+}
+
+.btn-group .btn:first-child {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+.btn-group .btn:last-child {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-right: none;
+}
+
+
+
+/*////////////////////////////////////////////////
+////                                         /////
+////           pure_button_end               /////
+////                                         /////
+///////////////////////////////////////////////*/
+
+/*////////////////////////////////////////////////
+////                                         /////
+////           pure_form_star                /////
+////                                         /////
+///////////////////////////////////////////////*/
+
+
+/*!
+Pure v1.0.1
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/pure-css/pure/blob/master/LICENSE.md
+*/
+/*csslint box-model:false*/
+/*
+Box-model set to false because we're setting a height on select elements, which
+also have border and padding. This is done because some browsers don't render
+the padding. We explicitly set the box-model for select elements to border-box,
+so we can ignore the csslint warning.
+*/
+
+._form input[type="text"],
+._form input[type="password"],
+._form input[type="email"],
+._form input[type="url"],
+._form input[type="date"],
+._form input[type="month"],
+._form input[type="time"],
+._form input[type="datetime"],
+._form input[type="datetime-local"],
+._form input[type="week"],
+._form input[type="number"],
+._form input[type="search"],
+._form input[type="tel"],
+._form input[type="color"],
+._form select,
+._form textarea {
+    padding: 0.5em 0.6em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    -webkit-box-shadow: inset 0 1px 3px #ddd;
+            box-shadow: inset 0 1px 3px #ddd;
+    border-radius: 4px;
+    vertical-align: middle;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+._form input:not([type]) {
+    padding: 0.5em 0.6em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    -webkit-box-shadow: inset 0 1px 3px #ddd;
+            box-shadow: inset 0 1px 3px #ddd;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+
+/* Chrome (as of v.32/34 on OS X) needs additional room for color to display. */
+/* May be able to remove this tweak as color inputs become more standardized across browsers. */
+._form input[type="color"] {
+    padding: 0.2em 0.5em;
+}
+
+
+._form input[type="text"]:focus,
+._form input[type="password"]:focus,
+._form input[type="email"]:focus,
+._form input[type="url"]:focus,
+._form input[type="date"]:focus,
+._form input[type="month"]:focus,
+._form input[type="time"]:focus,
+._form input[type="datetime"]:focus,
+._form input[type="datetime-local"]:focus,
+._form input[type="week"]:focus,
+._form input[type="number"]:focus,
+._form input[type="search"]:focus,
+._form input[type="tel"]:focus,
+._form input[type="color"]:focus,
+._form select:focus,
+._form textarea:focus {
+    outline: 0;
+    border-color: #129FEA;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+._form input:not([type]):focus {
+    outline: 0;
+    border-color: #129FEA;
+}
+
+._form input[type="file"]:focus,
+._form input[type="radio"]:focus,
+._form input[type="checkbox"]:focus {
+    outline: thin solid #129FEA;
+    outline: 1px auto #129FEA;
+}
+._form .pure-checkbox,
+._form .pure-radio {
+    margin: 0.5em 0;
+    display: block;
+}
+
+._form input[type="text"][disabled],
+._form input[type="password"][disabled],
+._form input[type="email"][disabled],
+._form input[type="url"][disabled],
+._form input[type="date"][disabled],
+._form input[type="month"][disabled],
+._form input[type="time"][disabled],
+._form input[type="datetime"][disabled],
+._form input[type="datetime-local"][disabled],
+._form input[type="week"][disabled],
+._form input[type="number"][disabled],
+._form input[type="search"][disabled],
+._form input[type="tel"][disabled],
+._form input[type="color"][disabled],
+._form select[disabled],
+._form textarea[disabled] {
+    cursor: not-allowed;
+    background-color: #eaeded;
+    color: #cad2d3;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+._form input:not([type])[disabled] {
+    cursor: not-allowed;
+    background-color: #eaeded;
+    color: #cad2d3;
+}
+._form input[readonly],
+._form select[readonly],
+._form textarea[readonly] {
+    background-color: #eee; /* menu hover bg color */
+    color: #777; /* menu text color */
+    border-color: #ccc;
+}
+
+._form input:focus:invalid,
+._form textarea:focus:invalid,
+._form select:focus:invalid {
+    color: #b94a48;
+    border-color: #e9322d;
+}
+._form input[type="file"]:focus:invalid:focus,
+._form input[type="radio"]:focus:invalid:focus,
+._form input[type="checkbox"]:focus:invalid:focus {
+    outline-color: #e9322d;
+}
+._form select {
+    /* Normalizes the height; padding is not sufficient. */
+    height: 2.25em;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+._form select[multiple] {
+    height: auto;
+}
+._form label {
+    margin: 0.5em 0 0.2em;
+}
+._form fieldset {
+    margin: 0;
+    padding: 0.35em 0 0.75em;
+    border: 0;
+}
+._form legend {
+    display: block;
+    width: 100%;
+    padding: 0.3em 0;
+    margin-bottom: 0.3em;
+    color: #333;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+._form-stacked input[type="text"],
+._form-stacked input[type="password"],
+._form-stacked input[type="email"],
+._form-stacked input[type="url"],
+._form-stacked input[type="date"],
+._form-stacked input[type="month"],
+._form-stacked input[type="time"],
+._form-stacked input[type="datetime"],
+._form-stacked input[type="datetime-local"],
+._form-stacked input[type="week"],
+._form-stacked input[type="number"],
+._form-stacked input[type="search"],
+._form-stacked input[type="tel"],
+._form-stacked input[type="color"],
+._form-stacked input[type="file"],
+._form-stacked select,
+._form-stacked label,
+._form-stacked textarea {
+    display: block;
+    margin: 0.25em 0;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+._form-stacked input:not([type]) {
+    display: block;
+    margin: 0.25em 0;
+}
+._form-aligned input,
+._form-aligned textarea,
+._form-aligned select,
+/* NOTE: pure-help-inline is deprecated. Use ._form-message-inline instead. */
+._form-aligned .pure-help-inline,
+._form-message-inline {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+}
+._form-aligned textarea {
+    vertical-align: top;
+}
+
+/* Aligned Forms */
+._form-aligned .pure-control-group {
+    margin-bottom: 0.5em;
+}
+._form-aligned .pure-control-group label {
+    text-align: right;
+    display: inline-block;
+    vertical-align: middle;
+    width: 10em;
+    margin: 0 1em 0 0;
+}
+._form-aligned .pure-controls {
+    margin: 1.5em 0 0 11em;
+}
+
+/* Rounded Inputs */
+._form input.pure-input-rounded,
+._form .pure-input-rounded {
+    border-radius: 2em;
+    padding: 0.5em 1em;
+}
+
+/* Grouped Inputs */
+._form .pure-group fieldset {
+    margin-bottom: 10px;
+}
+._form .pure-group input,
+._form .pure-group textarea {
+    display: block;
+    padding: 10px;
+    margin: 0 0 -1px;
+    border-radius: 0;
+    position: relative;
+    top: -1px;
+}
+._form .pure-group input:focus,
+._form .pure-group textarea:focus {
+    z-index: 3;
+}
+._form .pure-group input:first-child,
+._form .pure-group textarea:first-child {
+    top: 1px;
+    border-radius: 4px 4px 0 0;
+    margin: 0;
+}
+._form .pure-group input:first-child:last-child,
+._form .pure-group textarea:first-child:last-child {
+    top: 1px;
+    border-radius: 4px;
+    margin: 0;
+}
+._form .pure-group input:last-child,
+._form .pure-group textarea:last-child {
+    top: -2px;
+    border-radius: 0 0 4px 4px;
+    margin: 0;
+}
+._form .pure-group button {
+    margin: 0.35em 0;
+}
+
+._form .pure-input-1 {
+    width: 100%;
+}
+._form .pure-input-3-4 {
+    width: 75%;
+}
+._form .pure-input-2-3 {
+    width: 66%;
+}
+._form .pure-input-1-2 {
+    width: 50%;
+}
+._form .pure-input-1-3 {
+    width: 33%;
+}
+._form .pure-input-1-4 {
+    width: 25%;
+}
+
+/* Inline help for forms */
+/* NOTE: pure-help-inline is deprecated. Use ._form-message-inline instead. */
+._form .pure-help-inline,
+._form-message-inline {
+    display: inline-block;
+    padding-left: 0.3em;
+    color: #666;
+    vertical-align: middle;
+    font-size: 0.875em;
+}
+
+/* Block help for forms */
+._form-message {
+    display: block;
+    color: #666;
+    font-size: 0.875em;
+}
+
+@media only screen and (max-width : 480px) {
+    ._form button[type="submit"] {
+        margin: 0.7em 0 0;
+    }
+
+    ._form input:not([type]),
+    ._form input[type="text"],
+    ._form input[type="password"],
+    ._form input[type="email"],
+    ._form input[type="url"],
+    ._form input[type="date"],
+    ._form input[type="month"],
+    ._form input[type="time"],
+    ._form input[type="datetime"],
+    ._form input[type="datetime-local"],
+    ._form input[type="week"],
+    ._form input[type="number"],
+    ._form input[type="search"],
+    ._form input[type="tel"],
+    ._form input[type="color"],
+    ._form label {
+        margin-bottom: 0.3em;
+        display: block;
+    }
+
+    .pure-group input:not([type]),
+    .pure-group input[type="text"],
+    .pure-group input[type="password"],
+    .pure-group input[type="email"],
+    .pure-group input[type="url"],
+    .pure-group input[type="date"],
+    .pure-group input[type="month"],
+    .pure-group input[type="time"],
+    .pure-group input[type="datetime"],
+    .pure-group input[type="datetime-local"],
+    .pure-group input[type="week"],
+    .pure-group input[type="number"],
+    .pure-group input[type="search"],
+    .pure-group input[type="tel"],
+    .pure-group input[type="color"] {
+        margin-bottom: 0;
+    }
+
+    ._form-aligned .pure-control-group label {
+        margin-bottom: 0.3em;
+        text-align: left;
+        display: block;
+        width: 100%;
+    }
+
+    ._form-aligned .pure-controls {
+        margin: 1.5em 0 0 0;
+    }
+
+    /* NOTE: pure-help-inline is deprecated. Use ._form-message-inline instead. */
+    ._form .pure-help-inline,
+    ._form-message-inline,
+    ._form-message {
+        display: block;
+        font-size: 0.75em;
+        /* Increased bottom padding to make it group with its related input element. */
+        padding: 0.2em 0 0.8em;
+    }
+}
+
+
+
+/*////////////////////////////////////////////////
+////                                         /////
+////           pure_form_end                 /////
+////                                         /////
+///////////////////////////////////////////////*/
+
+/*////////////////////////////////////////////////
+////                                         /////
+////           以下為共同內容                 /////
+////                                         /////
+///////////////////////////////////////////////*/
+.clearfix{
+    clear: both;
+}
+
+.wraper{
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.ribbon_wrap{
+    position: absolute;
+    width: 106px;
+    height: 108px;
+    overflow: hidden;  
+    position: absolute;
+    top: -10px;
+    right: -7px;
+}
+
+.ribbon {
+    position: relative;
+    left: 6px;
+    top: 23px;
+    width: 127px;
+    background: #00cc99;
+    font-family: microsoft JhengHei;
+    font-size: 14px;
+    color: #FFFFFF;
+    padding: 5px 0;
+    text-align: center;
+    transform: rotate(45deg);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ribbon:before {
+    content: "";
+    border-top: 4px solid #795548;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+}
+.ribbon:after {
+    content: "";
+    border-top: 4px solid #795548;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    position: absolute;
+    bottom: -4px;
+    right: 0;
+}
+
+
+/*/////////////////////////////////////////////////
+///                 表頭                        ///
+////////////////////////////////////////////////*/
+.header{
+    background-image: url(../img/header_desktop.png);
+    background-repeat: no-repeat;
+    position: relative;
+    height: 400px;    
+}
+
+.logo_menu_banner{
+    background: rgba(0,0,0,0.75);
+    padding: 17px 0px 75px 13px;
+}
+
+.logo_menu_banner h1{
+    float: left;
+    display: block;
+    background-image: url(../img/logo_w.png);
+    background-image: url(../img/logo_w.svg);
+    background-repeat: no-repeat;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 24px;
+    width: 120px;
+    margin:16px 0px 0px 42px;
+}
+
+.menu{
+    float: right;
+}
+
+.menu>li{
+    float: left;
+    color: #ffffff;
+    font-family: microsoft JhengHei;
+    margin: 0px 20px 0px 0px;
+    border:solid 1px transparent;
+    padding: 10px;        
+}
+
+
+.menu>li>a{
+    display: block;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;    
+}
+
+.menu>li:hover{
+    background: rgba(239,233,231,0.75);
+}
+
+
+
+.menu>li>a>i{
+    font-size: 25px;
+}
+
+.menu>li>a>span{
+    font-size: 10px;
+    color: #ffffff;
+}
+
+.ham_menu{
+    
+    display: none;
+}
+
+@media (max-width: 767px){
+
+    .header{
+        background-image: url(../img/header_mobile.png);
+        background-repeat: no-repeat;
+    }
+
+    .logo_menu_banner{
+
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 999;
+        background: rgba(0,0,0,1);
+        padding: 17px 0px 33px 13px;
+    }
+
+    .logo_menu_banner h1{
+        margin:0;
+    }
+
+    
+    .ham_menu{
+        display: block;
+        font-size: 24px;
+        color: #ffffff;
+        margin: 0px 20px 0px 0px;
+        float:right;
+    }
+
+    .menu{
+        float: none;
+        max-height: 0px;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        z-index: 999;
+        transition: max-height 3s;
+        margin: 15px 0px 0px -13px;
+        overflow: hidden;
+        background: rgba(0,0,0,1);        
+    }
+
+    .menu >li{
+        float: none;
+        border-bottom: solid 1px #ffffff;
+        padding: 10px 10px 10px 10px;      
+    }
+
+    .menu>li>a{
+        text-align: left;
+        transition: all 0.3s;
+    }
+
+    .drop_down .menu{
+        max-height: 600px;
+    }
+
+    .menu>li>a>i{
+        float: left;
+        margin: 5px 55px -26px 0px;
+        font-size: 50px;
+    }
+
+    .menu>li>a>h2{
+        text-align: right;
+        font-size: 40px;
+    }
+    
+
+    .menu>li>a>span{
+        text-align: right;
+        letter-spacing: 5px;
+        margin: 0px 0px 0px 195px;
+        font-size: 27px;
+    }
+}
+
+.banner_info{
+    text-align: center;
+    background: rgba(0,0,0,0.35);
+    color: #ffffff;
+    font-family: microsoft JhengHei;
+    margin: 60px 294px 145px 295px;
+    max-width: 460px;
+}
+
+.banner_info h2{
+    font-size: 36px;
+    padding: 20px 15px 16px 15px;
+}
+
+.banner_info p{
+    font-size: 16px;
+    padding: 0px 120px 26px 111px;
+    line-height: 1.5;
+}
+
+@media (max-width: 767px){
+    .banner_info{
+        margin: 0px;
+        position: absolute;
+        top: 130px;
+        left: 10px;
+        right: 10px;
+    }
+
+    .banner_info h2{
+        padding: 20px 2px 16px 2px;
+    }
+
+    .banner_info h2 i{
+        margin: 0px 32% 0px 32%;
+    }
+
+    .banner_info p{
+        padding: 0px 25% 20px 25%;
+    }
+}
+
+@media (max-width:363px){
+    .banner_info h2 i{
+        margin: 0px 32% 0px 31%;
+    }
+
+    .banner_info p{
+        padding: 0px 18% 20px 18%;
+    }
+}
+
+
+/*/////////////////////////////////////////////////
+///                 表尾                        ///
+////////////////////////////////////////////////*/
+
+.footer{
+    background: #efe9e7;
+    overflow: auto; 
+}
+
+.logo_social_link{
+    float: right;
+}
+
+.rest_info{
+    padding: 50px 0px 0px 43px;
+}
+
+
+.rest_info >ul>li{
+    float: left;
+}
+
+
+
+.rest_info >ul>li h2{
+    color: #3D1101;
+    font-size: 24px;
+    font-family: Microsoft JhengHei;
+    font-weight: bold;
+}
+
+
+
+.rest_info >ul>li p{
+    margin: 10% 0% 0% 0%;
+    font-size: 16px;
+    font-family: Microsoft JhengHei;
+    color: #3D1101;
+    font-weight: bold;
+}
+
+
+.about_us p{
+    padding: 0% 8% 0% 0%;
+    border: solid 1px #00000000;
+    width: 321px;
+}
+
+.phone_address li{
+    margin: 0% 0% 5% 0%;
+    font-size: 16px;
+    font-family: Microsoft JhengHei;
+    color: #3D1101;
+    font-weight: bold;
+}
+
+.phone_address li:before{
+    content: ".";
+    font-size: 29px;
+    text-align: center;
+    padding: 0px 5px 0px 0px;
+}
+
+.logo_social_link h1{
+    background-image: url(../img/logo_l.png);
+    background-image: url(../img/logo_l.svg);
+    background-repeat: no-repeat;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 290px;
+    height: 47px;
+}
+
+
+
+.logo_social_link ul{
+    padding: 0px 0px 0px 114px;
+}
+
+.logo_social_link ul li{
+    float: left;
+    margin: 15px 0px 0px 10px;     
+}
+
+.logo_social_link ul li a{
+    font-size: 36px;
+}
+
+.google i{
+    color: #db4437;
+}
+
+.twitter i{
+    color: #41ABE1;
+}
+
+.facebook i{
+    color: #3A5795;
+}
+
+@media (max-width: 767px){
+   
+    .rest_info{
+    padding: 50px 0px 30px 11px;
+    }
+
+    .rest_info >ul>li{
+    float: none;
+    margin: 0px 0px 30px 0px;    
+    }
+
+     .logo_social_link{
+    float: none;
+    margin: 0px 10px 0px 65px;
+    }
+
+
+}
+
+
+
+/*////////////////////////////////////////////////
+////                                         /////
+////           以下為首頁內容                 /////
+////                                         /////
+///////////////////////////////////////////////*/
+
+.title {
+    text-align: center;
+    font-family: Microsoft JhengHei;
+    font-size: 20px;
+    color: #3D1101;
+    line-height: 32px;
+    margin: 50px 0px 31px 281px;
+    float: left;
+}
+
+.title li p{
+    border-bottom: 1px solid #000000;
+    width: 118px;
+    height: 1px;
+}
+
+.title li{
+    float: right;
+}
+
+.introduction{
+    background: #efe9e7;
+    overflow:auto;
+}
+
+.dash{
+    margin: 30px 10px 0px 10px;
+}
+
+.info{
+    float: right;
+    margin: 0% 0% 5% 0%;
+}
+
+.info li{
+    float: left;
+    border: solid 1px #00000000;
+    width: 33.33333%;
+    height: 360px;
+    text-align: center;
+    margin: 5% 0% 0% 0%;
+    padding: 0% 1% 0% 1%;
+}
+
+.info li h3{
+    margin: 10% 0% 10% 0%;
+    color:#613d3d;
+    font-size: 18px;
+    font-family: Microsoft JhengHei ;
+    font-weight: bold;
+}
+
+.info li p{
+    margin: 0% 0% 0% 10%;
+    color:#613d3d;
+    font-size: 16px;
+    font-family: Microsoft JhengHei ;
+    font-weight: bold;
+    text-align:left;
+} 
+/*///*/
+@media(max-width: 767px){
+
+    .title{
+        float: none;
+        margin: 50px 0px 31px 0px;
+    }
+
+    .title li p{
+        border:none;
+        width: 0;
+        height: 0;
+    }
+
+    .title li{
+        float: none;
+    }
+
+    .dash{
+        margin:0px;
+    }
+
+    .info{
+        float: none;
+        display: block;
+    }
+
+    .info li{
+        float: none;
+        display: block;
+        width: 100%;
+    }
+
+
+}
+/*////*/
+.chef_info{
+    background: #7d1f1f;
+}
+
+.chef_info h3{
+    background-image: url(../img/main_chef_brown.png);
+    background-repeat: no-repeat;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    float: left;
+    padding: 0% 0% 43% 40%;
+    margin: 0% 0% 0% 6%;
+}
+
+
+
+.chef_info1{
+    color: #EFE9E7;
+    padding: 10% 5% 13% 55%;    
+}
+
+@media (max-width: 767px){
+
+    .chef_info1{
+        padding: 10% 20% 10% 15%;
+    }
+
+
+    .chef_info h3{
+        background-image: url(../img/main_chef_brown373.png);
+        float: none;
+        margin: 0px;
+        height: 460px;
+    }
+   
+}
+
+.name_1{
+    margin: 0% 0% 5% 0%; 
+}
+
+.name_1 h2{
+    font-size: 20px;
+    font-family: Microsoft JhengHei ;
+    font-weight: bold;
+    margin: 0% 0% 2% 0%;
+}
+
+.name_1 i{
+    font-size: 16px;
+}
+
+.assess{
+    background: #efe9e7;
+    font-family: Microsoft JhengHei;
+    color: #3D1101;
+}
+
+.assess li img{
+    float: left;
+    margin: 0px 0px 0px 0px;
+}
+
+.assess h2{
+    font-size: 24px;
+    text-align: center;
+    padding: 5% 0% 5% 0%;
+}
+
+.assess h3{
+    font-size: 18px;    
+}
+
+.assess p{
+    font-size: 16px;
+    line-height: 24px;    
+}
+
+.assess i{
+    font-size: 16px;
+    color: rgba(61,17,0,0.75);
+    line-height: 24px;
+}
+
+
+.assess ul li{
+    float: left;
+    border: solid 1px #00000000;
+    margin: 0px 100px 0px 20px;
+    width: 220px;
+}
+
+.cont{
+    margin:  30px 0px 40px 70px;
+    width: 220px;
+}
+
+.cont h3{
+    margin:  0px 0px 40px 0px;
+}
+
+.cont p{
+    margin: 0px 0px 20px 0px;
+}
+
+.cont i{
+    margin: 0px 0px 0px 135px;
+}
+
+.map_order{
+    background: #f6f4f3;
+    padding: 50px 0px 50px 0px; 
+}
+
+.map_order h2,label,span{
+    font-family: Microsoft JhengHei;
+    color: #3D1101;    
+}
+
+.map_order h2{
+    font-size: 24px;
+    text-align: center;
+    margin: 0px 0px 50px 0px;
+}
+
+.map{
+    float: left;
+    margin: 0px 0px 0px 42px;
+}
+
+.map iframe{
+    width: 460px;
+    height: 386px;
+}
+
+
+.order{
+    float: right;
+    margin: 0px 42px 0px 0px;
+}
+
+.order input[type="text"],.radio_vg,.button_form{
+    margin: 19px 0px 19px 0px;
+}
+
+.order input[type="text"]{
+    width: 460px;
+    height: 32px;
+    padding: 10px;
+}
+
+.order input[type="button"],input[type="reset"]{
+    margin: 0px 5.5px 0px 5.5px;
+    width: 70px;
+    height: 32px;
+    cursor:pointer;
+}
+
+.radio_vg{
+    float: left;    
+}
+
+.radio_vg input[type="radio"]{
+    margin: 10px 35px 0px 10px;
+    cursor: pointer;    
+}
+
+
+.button_form{
+    float: right;
+    padding: 15px 0px 0px 0px;
+}
+
+.button_form input{
+    border-radius: 3px;
+    font-family: PingFang TC;
+    font-size: 14px;
+    color: #FFFFFF;
+    border: none; 
+}
+
+.button_form input[type="button"]{    
+    background: #F56C23;
+}
+
+.button_form input[type="button"]:hover{
+    background: rgba(245,108,35,0.5);
+}
+
+.button_form input[type="reset"]{    
+    background: rgba(0,0,0,0.35);
+}
+
+@media (max-width: 767px){
+    .map{
+        float: none;
+        margin:0px 0px 0px 10px;
+    }
+
+    .map iframe{
+        width: 298px;
+        height: 386px;
+    }
+
+    .order{
+        margin: 35px 10px 0px 10px;
+    }
+
+    .order input[type="text"]{
+        width: 300px;        
+    }
+
+    .button_form{
+        padding: 15px 0px 0px 0px;
+    }
+}
+
+
+
+/*////////////////////////////////////////////////
+////                                         /////
+////           以下為餐點介紹                 /////
+////                                         /////
+///////////////////////////////////////////////*/
+.container_meal{
+    background: #e0d0ca;
+    color: #3D1101;
+    overflow:auto;
+}
+
+.meal_titel{
+    float: left;
+    margin: 35px 0px 0px 23px;
+}
+
+.meal_titel h2{
+    text-align: right;
+    font-size: 30px;
+    font-family: Microsoft JhengHei;
+    margin: 10px 0px 20px 0px;
+    padding-right: 10px;
+}
+
+
+.meal_info >ul > li{
+    background: rgba(181,176,170,0.3);
+    border: 1px solid transparent;
+    overflow:auto;
+    margin: 0 auto;
+    margin-top:40px;
+    margin-bottom:40px;
+    padding:5px;
+    width: 80%;
+}
+
+
+.meal_introduction{
+    float: right;
+    width: 40%;
+}
+
+.meal_introduction p{
+    font-family: Microsoft JhengHei;
+    line-height: 1.5;
+    padding-left:25px;
+    padding-right:25px;
+}
+
+.meal_introduction ul{
+    margin: 30px 0px 0px 0px;
+}
+
+.meal_introduction ul li span{
+    padding: 0px 0px 0px 10px;
+    color: #3D1101;
+}
+
+.meal_info ul ul{
+    float: right;
+}
+
+.meal_info ul ul li{
+    float: left;
+    margin: 0px 10px 0px 0px;
+}
+
+.classic {
+    position:relative;
+}
+
+
+
+.ribbon_1 {    
+    width: 100px;
+    height: 25px;
+    overflow: hidden;
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    background: #db142e;
+    font-family: microsoft JhengHei;
+    font-weight: bold;
+    font-size: 17px;
+    color: #FFFFFF;
+    padding: 5px 10px;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.classic h1{
+    background-image: url(../img/product_1@2x.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 160px;
+    width: 400px;
+}
+
+.sausage h1{
+    background-image: url(../img/product_2@2x.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 160px;
+    width: 400px;
+}
+
+.bacon h1{
+    background-image: url(../img/product_3@2x.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 160px;
+    width: 400px;
+}
+
+.fries h1{
+    background-image: url(../img/product_4@2x.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 160px;
+    width: 400px;
+}
+
+.location_1:before{
+    content:""
+}
+
+@media (max-width: 767px){
+
+    .meal_info >ul > li{
+        width: 90%;
+    }
+
+    .meal_titel{
+        margin:0 auto;
+        float:none;
+    }
+
+    .meal_introduction{
+        float: none;
+        width: 100%;
+    }
+    
+
+    .meal_info ul ul li{
+        float: none;
+        margin-bottom:6%;
+    }
+
+    .ribbon_1{
+        top:15px;
+        left:0px;
+    }
+
+    .classic h1{
+    background-image: url(../img/product_1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+
+    .sausage h1{
+    background-image: url(../img/product_2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+
+    .bacon h1{
+    background-image: url(../img/product_3.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+
+    .fries h1{
+    background-image: url(../img/product_4.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+}
+
+
+
+/*////////////////////////////////////////////////
+////                                         /////
+////           以下為點餐頁面                 /////
+////                                         /////
+///////////////////////////////////////////////*/
+
+.order_meal{
+    float:right;
+    width: 73%;
+    margin:52px 0px 0px 35px;
+}
+
+.order_menu{
+    margin:52px 0px 0px 20px;
+    float:left;
+}
+
+.order_menu h2{
+    margin:0px 0px 16px 0px;
+    font-family: Microsoft JhengHei;
+    font-size: 20px;
+    color: #3D1101;
+    line-height: 32px;
+}
+
+.order_menu h2 i{
+    padding: 0px 15px 0px 0px;
+}
+
+.order_menu ul li{
+    border-bottom:1px solid #3D1101;
+    width: 220px;
+    height:auto;
+    white-space: nowrap;
+    overflow: hidden;    
+}
+
+.order_menu ul li :hover, .order_menu ul li .active{
+    background: #3D1101;
+    width: 220px;  
+    color: #ffffff;
+}
+
+.order_menu ul li a{
+    text-decoration:none;
+    font-family: Microsoft JhengHei;
+    font-size: 16px;
+    color: #3D1101;
+    line-height: 32px;
+    padding: 5px 168px 6px 10px;   
+}
+
+@media (max-width: 767px){
+    .order_menu{
+        float: none;
+        margin:52px 10px 0px 10px;
+    }
+
+    .order_menu ul li{
+        width: auto;
+    }
+
+    .order_meal{
+        float: none;
+        margin:0 auto;
+        width: 100%;
+    }
+}
+
+.meal_search input[type="text"]{
+    width: 59%;
+    height: 32px;
+    float: left;
+    border: 2px solid #3D1101;
+}
+
+.meal_search button{
+    float: left;
+    height: 32px;
+    background: #3D1101;
+    border: none;
+    color: #fff;
+}
+
+.checkout_button{
+    float:right;
+    margin:0px 63px 0px 0px;
+}
+
+.checkout_button li{
+    float:left;
+}
+
+.checkout_button button{
+    font-family: Microsoft JhengHei;
+    font-size: 16px;
+    color: #3D1101;
+    background:transparent;
+    border:none;
+}
+
+.checkout_button a{
+    color: #3D1101;
+    font-size: 27px;
+    border-left:1px solid #3D1101;
+    padding-left:17px;
+}
+
+@media (max-width: 767px){
+
+    .meal_search input[type="text"]{
+        width: 85%;
+        height: 32px;
+        float: left;
+        border: 2px solid #3D1101;
+        margin: 15px;
+        margin-right: 0;
+    }
+
+    .search_button{
+        float: left;
+        height: 32px;
+        background: #3D1101;
+        border: none;
+        color: #fff;
+        margin-top: 15px;
+    }
+    
+
+    .checkout_button {
+        margin: 15px 29px 30px 0px;
+    }
+
+    .checkout_button li{
+        float:left;
+    }
+
+  
+
+}
+
+
+.meal_menu ul li{
+    float: left;
+    width: 220px;
+    height: 280px;
+    background: #EFE9E7;
+    box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.16);
+    margin: 26px 26px 30px 0px;
+    text-align: center;
+    color: #3D1101;
+    font-family: Microsoft JhengHei;
+    line-height:1.5;
+    position:relative;
+}
+
+.meal_menu ul li h1{    
+    font-size: 20px;
+}
+
+.meal_menu ul li p{
+    font-size: 12px;
+}
+
+.meal_menu ul li i{
+    border-top: 1px solid #3D1101;
+    display: block;
+    font-family: Roboto;
+    font-size: 20px;
+    padding:20px 0px 13px 0px;
+    margin: 8px 65px 0px 65px;
+}
+
+.meal_menu ul li i:before {
+    font-family: "Font Awesome 5 Pro";
+    content:"\f155";
+    font-weight: 900;
+}
+
+
+.meal_menu ul li input[type="button"]{
+    border: 2px solid #FF5E45;
+    border-radius: 3px;
+    background:transparent;
+    font-family: Microsoft JhengHei,FontAwesome;
+    font-size: 16px;
+    color: #FF5E45;
+    width: 200px;
+    cursor: pointer;
+}
+
+.meal_menu ul li input[type="button"]:hover{
+    background: #FF5E45;
+    color: #ffffff;
+}
+
+
+.meal_1 h2{
+    background-image: url(../img/product_1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 120px;
+}
+
+.meal_2 h2{
+    background-image: url(../img/product_2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 120px;
+}
+
+.meal_3 h2{
+    background-image: url(../img/product_3.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 120px;
+}
+
+.meal_4 h2{
+    background-image: url(../img/product_4.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 120px;
+}
+
+@media (max-width: 767px){
+    .meal_menu ul li{
+        float: none;
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+
+    .meal_menu ul li{
+        width: 300px;
+    }
+
+}
+
+
+
+
+
+/*////////////////////////////////////////////////
+////                                         /////
+////           以下為會員登入頁面             /////
+////                                        /////
+///////////////////////////////////////////////*/
+
+.container_loging{
+    background: #EFE9E7;
+    overflow:auto;
+}
+
+
+
+.loging_title{
+    text-align: center;
+}
+
+
+.loging_title h1{    
+    background-image: url(../img/logo_l.png);
+    background-image: url(../img/logo_l.svg);
+    background-repeat: no-repeat;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 243px;
+    height: 48px;
+    margin:50px 394px 5px 390px;
+}
+
+.loging_title p{
+    font-family: Microsoft JhengHei;
+    font-size: 20px;
+    color: #3D1101;
+    margin: 0px 0px 35px 0px;
+}
+
+
+._loging{
+    background: #EFE9E7;
+    box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.16);
+    width:300px;
+    border-top: 3px solid #FF5E45;
+    margin:0px 362px 50px 362px;
+    padding: 12px 15px 15px 15px;
+}
+
+._loging legend{
+    text-align: center;
+    font-family: Microsoft JhengHei;
+    font-size: 18px;
+    color: #3D1101;
+}
+
+._loging legend i{
+    display: block;
+    font-size: 10px;
+    margin:3px 0px 0px 0px;
+}
+
+._loging label{
+    margin: 15px 0px 3px 0px;
+}
+
+.forget_password{
+    font-family: Microsoft JhengHei;
+    font-size: 14px;
+    color: #FF5E45;
+    text-decoration:none;
+    margin:0px 0px 0px 5px;
+}
+
+.forget_password:hover{
+    border-bottom: 1px solid #FF5E45;
+    padding-bottom:1px;
+}
+
+._loging input[type="email"], ._loging input[type="password"]{
+    font-family: FontAwesome;
+    width: 95%;
+}
+
+._loging label i{
+    font-size: 10px;
+}
+
+._loging button{
+    border-radius: 3px;
+    font-family: Microsoft JhengHei;
+    font-size: 14px;
+    color: #FFFFFF;
+    width: 125px;
+    height: 32px;
+    border: none;
+    cursor:pointer;
+}
+
+.sign_on{    
+    background: rgba(0,0,0,0.35);
+    margin:0px 5px 0px 0px;    
+}
+
+.loging_button{
+    background: #F56C23;
+    border-radius: 3px;
+    margin:0px 0px 0px 5px;     
+}
+
+@media (max-width: 767px){
+
+
+.loging_title h1{  
+    
+    margin: 40px 0px 15px 40px;
+}
+
+._loging{    
+    margin:0 auto;
+    box-shadow:0px 0;
+}
+
+
+}
+
+/*////////////////////////////////////////////////
+////                                         /////
+////           以下為註冊頁面                 /////
+////                                         /////
+///////////////////////////////////////////////*/
+
+.register{
+    background: #EFE9E7;
+    box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.16);
+    width:620px;
+    border-top: 3px solid #FF5E45;
+    margin:35px 202px 50px 202px;
+    padding: 15px 15px 15px 15px;
+    overflow:auto;    
+}
+
+.register h1{
+    text-align:center;
+    font-family: Microsoft JhengHei;
+    margin:0px 0px 16px 0px;
+}
+
+.register i{
+    display: block;
+}
+
+.terms{
+    width: 285px;
+    font-family: Microsoft JhengHei;
+    color: #3D1101;
+}
+
+
+.terms h2{
+    margin:0px 0px 20px 0px;
+    text-align: center;
+}
+
+.register_form fieldset{
+    float:right;
+    width: 285px;
+    
+}
+
+.register_form input{
+    margin:0px 0px 15px 0px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-shadow: inset 0px 1px 0px 0px #ECECEC;
+    border-radius: 3px;
+}
+
+.register_form input[type="text"], input[type="password"], input[type="Email"]{
+    width: 285px;
+    height: 32px;
+    font-family: "FontAwesome";
+}
+
+.pure-control-group label{
+    display:block;
+    margin:0px 0px 3px 0px;
+    font-family: Microsoft JhengHei;
+    font-size: 16px;
+    color: #3D1101;
+}
+
+.pure-controls button{
+    float:right;
+    background: #F56C23;
+    color:#ffffff;
+    font-size: 14px;
+    font-family: Microsoft JhengHei;
+    border:none;
+    border-radius: 3px;
+    width: 125px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.register_form a{
+    display: block;
+    font-family: Microsoft JhengHei;
+    font-size: 14px;
+    color: #FF5E45;
+    text-decoration: none;
+}
+
+.register_form a:hover{
+    text-decoration: underline;
+}
+
+@media(max-width:767px){
+    .register{
+    box-shadow: 0px 0 ;
+    padding: 8px;
+    width:300px;
+    border-top: 3px solid #FF5E45;
+    margin:0 auto;
+    margin-bottom: 10px;
+    overflow:auto;    
+}
+
+.register_form fieldset{
+    float:none;
+    width: 100%;
+    
+}
+
+.terms{
+    float:none;
+    border-top:1px double #FF5E45;
+    margin-top: 30px;
+    padding-top: 10px;
+    width: 100%;
+}
+
+
+
+}
+
+
+/*////////////////////////////////////////////////
+////                                         /////
+////           以下為忘記密碼頁面              /////
+////                                         /////
+///////////////////////////////////////////////*/ 
+
+.password_reset{
+
+    background: #EFE9E7;
+    box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.16);
+    border-top: 3px solid #FF5E45;
+    margin:85px 302px 90px 302px;
+    padding: 15px 15px 15px 15px;
+    overflow:auto;  
+    width: 420px;    
+}
+
+.message{
+    display: block;
+    font-size: 10px;
+    color: #FF5E45;;
+    margin:10px 0px 20px 70%;
+    text-decoration: none;
+}
+
+.message:hover{
+    text-decoration: underline;
+}
+
+.email_key_in legend{
+    text-align:center;
+    font-size: 20px;
+    font-family: Microsoft JhengHei;
+    color: #3D1101;
+    margin:0px 0px 20px 0px;
+}
+
+.email_key_in legend i{
+    font-size: 5px;
+    font-family: Microsoft JhengHei;
+    color: #3D1101;
+    display: block;
+}
+
+.email_key_in input[type="email"]{
+    width: 100%;
+    margin: 10px 0;
+    font-family: "FontAwesome";
+}
+
+.email_key_in button{
+    margin:0px 0px 0px 30%;
+    background: #F56C23;
+    color:#ffffff;
+    font-size: 14px;
+    font-family: Microsoft JhengHei;
+    border:none;
+    border-radius: 3px;
+    width: 125px;
+    height: 32px;
+    cursor: pointer;
+}
+
+@media (max-width: 767px){
+
+    .password_reset{
+        margin:0 auto;
+        width:100%;
+    }
+
+    .message{
+        color:#f53344;
+    }
+}
